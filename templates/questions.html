@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body id="top">
+    <header>
+        <h1>Nuclear Fission & Fusion</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('questions') }}">Questions</a>
+            <a href="https://phet.colorado.edu/en/simulations/nuclear-fission">Simulation</a>
+            <a href="https://docs.google.com/presentation/d/10ewK6qf8u955FQ5NsUPekrf6mUADOSGPT18HJ3eFduI/edit?usp=sharing" target="_blank">Slideshow</a>
+        </nav>
+    </header>
+
+    <main2>
+        <div class="question_container">
+        <script>
+            let answer1 = "";
+        </script>
+
+        <h1>Questions</h1>
+        <div>
+        <p>What is the isotope used in nuclear fission?</p>
+        
+            <input type="radio" id="a" name="Question_1" value="U-238" onchange="answer1 = this.value">
+            <label for="U-238">U-238</label><br>
+            <input type="radio" id="b" name="Question_1" value="U-235" onchange="answer1 = this.value">
+            <label for="U-235">U-235</label><br>
+            <input type="radio" id="c" name="Question_1" value="Pu-239" onchange="answer1 = this.value">
+            <label for="Pu-239">Pu-239</label><br>
+            <input type="radio" id="d" name="Question_1" value="U-239" onchange="answer1 = this.value">
+            <label for="U-239">U-239</label>
+        </div>
+        <button type="button" onclick="logAnswer1(this)">Log Answer</button>
+        <script>
+            // This script will log the selected answer when the button is clicked
+            function logAnswer1(btn) {
+                const selectedOption = document.querySelector('input[name="Question_1"]:checked');
+                if (selectedOption) {
+                    answer1 = selectedOption.value; // Replaces the answer variable
+                    //console.log('Submitted Fission:', answer1);
+
+                    if (answer1 === "U-235") {
+                        console.log("ye");
+                        btn.style.backgroundColor = "green";
+                        btn.style.color = "white";
+                        btn.innerText = "Correct!";
+                    } else {
+                        console.log('no');
+                        btn.style.backgroundColor = "red"; // Optional: turn red if incorrect
+                        btn.style.color = "white";
+                        btn.innerText = "Incorrect :(";
+                    }
+                }
+            }
+        </script>
+
+        <script>
+            let answer2 = "";
+        </script>
+        <p>What collides with the nucleas for nuclear fission to occur?</p>
+
+            <input type="radio" id="a" name="Question_2" value="proton" onchange="answer2 = this.value">
+            <label for="proton">Proton</label><br>
+            <input type="radio" id="b" name="Question_2" value="electron" onchange="answer2 = this.value">
+            <label for="electron">Electron</label><br>
+            <input type="radio" id="c" name="Question_2" value="neutron" onchange="answer2 = this.value">
+            <label for="neutron">Neutron</label><br>        
+        <button type="button" onclick="logAnswer2(this)">Log Answer</button>
+        <script>
+            // This script will log the selected answer when the button is clicked
+            function logAnswer2(btn) {
+                const selectedOption = document.querySelector('input[name="Question_2"]:checked');
+                if (selectedOption) {
+                    answer2 = selectedOption.value; // Replaces the answer variable
+                    //console.log('Submitted Fission:', answer2);
+
+                    if (answer2 === "neutron") {
+                        console.log("ye");
+                        btn.style.backgroundColor = "green";
+                        btn.style.color = "white";
+                        btn.innerText = "Correct!";
+                    } else {
+                        console.log('no');
+                        btn.style.backgroundColor = "red"; // Optional: turn red if incorrect
+                        btn.style.color = "white";
+                        btn.innerText = "Incorrect :(";
+                    }
+                }
+            }
+        </script>
+
+        <script>
+            let answer3 = "";
+        </script>
+        <p>What does a nuclear fission reactor primarily do to generate electricity?</p>
+
+            <input type="radio" id="a" name="Question_3" value="boil" onchange="answer3 = this.value">
+            <label for="boil">Boil a liquid to turn a turbine</label><br>
+            <input type="radio" id="b" name="Question_3" value="electron" onchange="answer3 = this.value">
+            <label for="electron">Use neutrons to induct current on electrons</label><br>
+            <input type="radio" id="c" name="Question_3" value="radioactive" onchange="answer3 = this.value">
+            <label for="radioactive">Use uranium radioactivity to generate electricity</label><br>     
+            <input type="radio" id="c" name="Question_3" value="gas" onchange="answer3 = this.value">
+            <label for="gas">Use UF6 to conduct electricity through the UF6 gas</label><br>        
+        <button type="button" onclick="logAnswer3(this)">Log Answer</button>
+        <script>
+            // This script will log the selected answer when the button is clicked
+            function logAnswer3(btn) {
+                const selectedOption = document.querySelector('input[name="Question_3"]:checked');
+                if (selectedOption) {
+                    answer3 = selectedOption.value; // Replaces the answer variable
+                    //console.log('Submitted Fission:', answer3);
+
+                    if (answer3 === "boil") {
+                        console.log("ye");
+                        btn.style.backgroundColor = "green";
+                        btn.style.color = "white";
+                        btn.innerText = "Correct!";
+                    } else {
+                        console.log('no');
+                        btn.style.backgroundColor = "red"; // Optional: turn red if incorrect
+                        btn.style.color = "white";
+                        btn.innerText = "Incorrect :(";
+                    }
+                }
+            }
+        </script>
+
+        <script>
+            let answer4 = "";
+        </script>
+        <p>What is the estimated cost of the full construction of a nuclear fission reactor?</p>
+
+            <input type="radio" id="a" name="Question_4" value="10b" onchange="answer4 = this.value">
+            <label for="10b">$10 billion</label><br>
+            <input type="radio" id="b" name="Question_4" value="20b" onchange="answer4 = this.value">
+            <label for="20b">$20 billion</label><br>
+            <input type="radio" id="c" name="Question_4" value="500m" onchange="answer4 = this.value">
+            <label for="500m">$500 million</label><br>     
+            <input type="radio" id="c" name="Question_4" value="300b" onchange="answer4 = this.value">
+            <label for="300b">$300 billion</label><br>        
+        <button type="button" onclick="logAnswer4(this)">Log Answer</button>
+        <script>
+            // This script will log the selected answer when the button is clicked
+            function logAnswer4(btn) {
+                const selectedOption = document.querySelector('input[name="Question_4"]:checked');
+                if (selectedOption) {
+                    answer4 = selectedOption.value; // Replaces the answer variable
+                    //console.log('Submitted Fission:', answer4);
+
+                    if (answer4 === "20b") {
+                        console.log("ye");
+                        btn.style.backgroundColor = "green";
+                        btn.style.color = "white";
+                        btn.innerText = "Correct!";
+                    } else {
+                        console.log('no');
+                        btn.style.backgroundColor = "red"; // Optional: turn red if incorrect
+                        btn.style.color = "white";
+                        btn.innerText = "Incorrect :(";
+                    }
+                }
+            }
+        </script>
+
+        <script>
+            let answer5 = "";
+        </script>
+        <p>What is the estimated cost per kWh through nuclear fission?</p>
+
+            <input type="radio" id="a" name="Question_5" value="0.10_cents" onchange="answer5 = this.value">
+            <label for="0.10_cents">"0.10 cents</label><br>
+            <input type="radio" id="b" name="Question_5" value="20_cents" onchange="answer5 = this.value">
+            <label for="20_cents">20 cents</label><br>
+            <input type="radio" id="c" name="Question_5" value="4_cents" onchange="answer5 = this.value">
+            <label for="4_cents">4 cents</label><br>     
+            <input type="radio" id="d" name="Question_5" value="0.25_cents" onchange="answer5 = this.value">
+            <label for="0.25_cents">0.25 cents</label><br>        
+        <button type="button" onclick="logAnswer5(this)">Log Answer</button>
+        <script>
+            // This script will log the selected answer when the button is clicked
+            function logAnswer5(btn) {
+                const selectedOption = document.querySelector('input[name="Question_5"]:checked');
+                if (selectedOption) {
+                    answer5 = selectedOption.value; // Replaces the answer variable
+                    //console.log('Submitted Fission:', answer5);
+
+                    if (answer5 === "0.25_cents") {
+                        console.log("ye");
+                        btn.style.backgroundColor = "green";
+                        btn.style.color = "white";
+                        btn.innerText = "Correct!";
+                    } else {
+                        console.log('no');
+                        btn.style.backgroundColor = "red"; // Optional: turn red if incorrect
+                        btn.style.color = "white";
+                        btn.innerText = "Incorrect :(";
+                    }
+                }
+            }
+        </script>
+
+        <script>
+            let answer6 = "";
+        </script>
+        <p>How much of Ontario's electricity is generated by nuclear fission power?</p>
+
+            <input type="radio" id="a" name="Question_6" value="20%" onchange="answer6 = this.value">
+            <label for="20%">20%</label><br>
+            <input type="radio" id="b" name="Question_6" value=">50%" onchange="answer6 = this.value">
+            <label for=">50%">>50%</label><br>
+            <input type="radio" id="c" name="Question_6" value="4%" onchange="answer6 = this.value">
+            <label for="4%">4%</label><br>     
+            <input type="radio" id="d" name="Question_6" value="40%" onchange="answer6 = this.value">
+            <label for="40%">40%</label><br>        
+        <button type="button" onclick="logAnswer6(this)">Log Answer</button>
+        <script>
+            // This script will log the selected answer when the button is clicked
+            function logAnswer6(btn) {
+                const selectedOption = document.querySelector('input[name="Question_6"]:checked');
+                if (selectedOption) {
+                    answer6 = selectedOption.value; // Replaces the answer variable
+                    //console.log('Submitted Fusion:', answer6);
+
+                    if (answer6 === ">50%") {
+                        console.log("ye");
+                        btn.style.backgroundColor = "green";
+                        btn.style.color = "white";
+                        btn.innerText = "Correct!";
+                    } else {
+                        console.log('no');
+                        btn.style.backgroundColor = "red"; // Optional: turn red if incorrect
+                        btn.style.color = "white";
+                        btn.innerText = "Incorrect :(";
+                    }
+                }
+            }
+        </script>
+
+        <script>
+            let answer7 = "";
+        </script>
+        <p>What do nuclear fission reactors do to the environment? (Hint: Can be more than one right answer)</p>
+
+            <input type="radio" id="a" name="Question_7" value="20%" onchange="answer7 = this.value">
+            <label for="20%">Releases 0 emissions during operation</label><br>
+            <input type="radio" id="b" name="Question_7" value=">50%" onchange="answer7 = this.value">
+            <label for=">50%">Require very little land, preventing damaging ecosystems</label><br>
+            <input type="radio" id="c" name="Question_7" value="4%" onchange="answer7 = this.value">
+            <label for="4%">Spent fuel can be recycled to be used again</label><br>     
+            <input type="radio" id="d" name="Question_7" value="40%" onchange="answer7 = this.value">
+            <label for="40%">Provides very large amounts of energy with relatively low environmental impact</label><br>        
+        <button type="button" onclick="logAnswer7(this)">Log Answer</button>
+        <script>
+            // This script will log the selected answer when the button is clicked
+            function logAnswer7(btn) {
+                const selectedOption = document.querySelector('input[name="Question_7"]:checked');
+                if (selectedOption) {
+                    answer7 = selectedOption.value; // Replaces the answer variable
+                    //console.log('Submitted Fusion:', answer7);
+
+                    if (answer7) {
+                        console.log("ye");
+                        btn.style.backgroundColor = "green";
+                        btn.style.color = "white";
+                        btn.innerText = "Correct!";
+                    } else {
+                        console.log('no');
+                        btn.style.backgroundColor = "red"; // Optional: turn red if incorrect
+                        btn.style.color = "white";
+                        btn.innerText = "Incorrect :(";
+                    }
+                }
+            }
+        </script>
+
+        <script>
+            let answer8 = "";
+        </script>
+        <p>What is the final fuel sent to nuclear fission reactors</p>
+
+            <input type="radio" id="a" name="Question_8" value="EUO2" onchange="answer8 = this.value">
+            <label for="EUO2">Enriched UO2</label><br>
+            <input type="radio" id="b" name="Question_8" value=">50%" onchange="answer8 = this.value">
+            <label for=">50%">Unenriched UO2</label><br>
+            <input type="radio" id="c" name="Question_8" value="4%" onchange="answer8 = this.value">
+            <label for="4%">Enriched UF6 solid</label><br>     
+            <input type="radio" id="d" name="Question_8" value="40%" onchange="answer8 = this.value">
+            <label for="40%">Unenriched UF6 solid</label><br>        
+        <button type="button" onclick="logAnswer8(this)">Log Answer</button>
+        <script>
+            // This script will log the selected answer when the button is clicked
+            function logAnswer8(btn) {
+                const selectedOption = document.querySelector('input[name="Question_8"]:checked');
+                if (selectedOption) {
+                    answer8 = selectedOption.value; // Replaces the answer variable
+                    //console.log('Submitted Fusion:', answer8);
+
+                    if (answer8 == "EUO2") {
+                        console.log("ye");
+                        btn.style.backgroundColor = "green";
+                        btn.style.color = "white";
+                        btn.innerText = "Correct!";
+                    } else {
+                        console.log('no');
+                        btn.style.backgroundColor = "red"; // Optional: turn red if incorrect
+                        btn.style.color = "white";
+                        btn.innerText = "Incorrect :(";
+                    }
+                }
+            }
+        </script>
+
+        <script>
+            let answer9 = "";
+        </script>
+        <p>What happens to fuel after it can no longer be used in a reactor?</p>
+
+            <input type="radio" id="a" name="Question_9" value="EUO2" onchange="answer9 = this.value">
+            <label for="EUO2">The used fuel is sent back to the same facility it came from to get made back again</label><br>
+            <input type="radio" id="b" name="Question_9" value=">50%" onchange="answer9 = this.value">
+            <label for=">50%">The fuel rods are thrown into landfills</label><br>
+            <input type="radio" id="c" name="Question_9" value="4%" onchange="answer9 = this.value">
+            <label for="4%">It gets buried for around 2 years before being brought back up</label><br>     
+            <input type="radio" id="d" name="Question_9" value="Yep" onchange="answer9 = this.value">
+            <label for="Yep">It gets captured and stored away for it to no longer be radioactive</label><br>        
+        <button type="button" onclick="logAnswer9(this)">Log Answer</button>
+        <script>
+            // This script will log the selected answer when the button is clicked
+            function logAnswer9(btn) {
+                const selectedOption = document.querySelector('input[name="Question_9"]:checked');
+                if (selectedOption) {
+                    answer9 = selectedOption.value; // Replaces the answer variable
+                    //console.log('Submitted:', answer9);
+
+                    if (answer9 == "Yep") {
+                        console.log("ye");
+                        btn.style.backgroundColor = "green";
+                        btn.style.color = "white";
+                        btn.innerText = "Correct!";
+                    } else {
+                        console.log('no');
+                        btn.style.backgroundColor = "red"; // Optional: turn red if incorrect
+                        btn.style.color = "white";
+                        btn.innerText = "Incorrect :(";
+                    }
+                }
+            }
+        </script>
+
+        <script>
+            let answer10 = "";
+        </script>
+        <p>Can used nuclear fuel be recycled?</p>
+
+            <input type="radio" id="a" name="Question_10" value="EUO2" onchange="answer10 = this.value">
+            <label for="EUO2">Yes, as the technology exists to recycle used nuclear fuel to become reprocessable through the conversion of UF6 to UO2</label><br>
+            <input type="radio" id="b" name="Question_10" value="yupper" onchange="answer10 = this.value">
+            <label for="yupper">Yes, with nuclear leaders such as France already recycling much of their used fuel back into usable fuel</label><br>
+            <input type="radio" id="c" name="Question_10" value="4%" onchange="answer10 = this.value">
+            <label for="4%">No, as the technology for recycling used nuclear fuel is not possible and results in waste</label><br>        
+        <button type="button" onclick="logAnswer10(this)">Log Answer</button>
+        <script>
+            // This script will log the selected answer when the button is clicked
+            function logAnswer10(btn) {
+                const selectedOption = document.querySelector('input[name="Question_10"]:checked');
+                if (selectedOption) {
+                    answer10 = selectedOption.value; // Replaces the answer variable
+                    //console.log('Submitted:', answer10);
+
+                    if (answer10 == "yupper") {
+                        console.log("ye");
+                        btn.style.backgroundColor = "green";
+                        btn.style.color = "white";
+                        btn.innerText = "Correct!";
+                    } else {
+                        console.log('no');
+                        btn.style.backgroundColor = "red"; // Optional: turn red if incorrect
+                        btn.style.color = "white";
+                        btn.innerText = "Incorrect :(";
+                    }
+                }
+            }
+        </script>
+        <!--<p>What is nuclear fusion?</p>
+        <textarea id="fusion-answer" cols="30" rows="5" oninput="console.log('Fusion answer:', this.value)"></textarea>
+        <button type="button" onclick="console.log('Submitted Fusion:', document.getElementById('fusion-answer').value)">Log
+            Answer</button>
+        --> 
+        </div>
+    </main2>
+</body>
+
+</html>
