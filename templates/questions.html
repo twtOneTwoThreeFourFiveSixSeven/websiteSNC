@@ -23,6 +23,7 @@
         <div class="question_container">
         <script>
             let answer1 = "";
+            let totalCorrect = 0;
         </script>
 
         <h1>Questions</h1>
@@ -52,6 +53,7 @@
                         btn.style.backgroundColor = "green";
                         btn.style.color = "white";
                         btn.innerText = "Correct!";
+                        totalCorrect++;
                     } else {
                         console.log('no');
                         btn.style.backgroundColor = "red"; // Optional: turn red if incorrect
@@ -388,6 +390,31 @@
                         btn.innerText = "Incorrect :(";
                     }
                 }
+            }
+        </script>
+        
+        <br><br>
+        <hr>
+        <h2>Results</h2>
+        <button type="button" onclick="calculateTotalScore()" style="padding: 10px 20px; font-size: 1.1em; cursor: pointer;">Show Total Score</button>
+        <p id="total-score-display" style="font-size: 1.2em; font-weight: bold;"></p>
+
+        <script>
+            function calculateTotalScore() {
+                let score = 0;
+                
+                if (document.querySelector('input[name="Question_1"]:checked')?.value === "U-235") score++;
+                if (document.querySelector('input[name="Question_2"]:checked')?.value === "neutron") score++;
+                if (document.querySelector('input[name="Question_3"]:checked')?.value === "boil") score++;
+                if (document.querySelector('input[name="Question_4"]:checked')?.value === "20b") score++;
+                if (document.querySelector('input[name="Question_5"]:checked')?.value === "0.25_cents") score++;
+                if (document.querySelector('input[name="Question_6"]:checked')?.value === ">50%") score++;
+                if (document.querySelector('input[name="Question_7"]:checked')) score++; // All options marked correct in previous code
+                if (document.querySelector('input[name="Question_8"]:checked')?.value === "EUO2") score++;
+                if (document.querySelector('input[name="Question_9"]:checked')?.value === "Yep") score++;
+                if (document.querySelector('input[name="Question_10"]:checked')?.value === "yupper") score++;
+
+                document.getElementById('total-score-display').innerText = "Total Score: " + score + " / 10";
             }
         </script>
         <!--<p>What is nuclear fusion?</p>
